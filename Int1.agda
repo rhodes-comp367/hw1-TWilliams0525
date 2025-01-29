@@ -14,21 +14,22 @@ isuc (int a b) = int (suc a) b
 
 -- given i, return i - 1.
 ipred : Int → Int
-ipred = ?
+ipred (int a b) = int a (suc b)
 
 -- given i, return -i.
 ineg : Int → Int
-ineg = ?
+ineg (int a b) = int b a
 
 -- given i & j, return i + j.
 iplus : Int → Int → Int
-iplus = ?
+iplus (int a b) (int c d) = int (plus a c) (plus b d)
 
 -- given i & j, return i - j.
 iminus : Int → Int → Int
-iminus = ?
+iminus (int a b) (int c d) = int (plus a d) (plus b c)
 
 -- given i & j, return i * j.
 itimes : Int → Int → Int
-itimes = ?
-
+itimes (int zero b) (int c d) = int (times b d) (times b c)
+itimes (int a zero) (int c d) = int (times a c) (times a d)
+itimes (int (suc a) (suc b)) c = itimes (int a b) c
